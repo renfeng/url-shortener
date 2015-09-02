@@ -1,0 +1,36 @@
+<link rel="import" href="../components/paper-input/paper-input.html">
+<link rel="import" href="../components/paper-button/paper-button.html">
+<link rel="import" href="../components/iron-ajax/iron-ajax.html">
+
+<dom-module id="url-shortener">
+	<template>
+		<div on-keypress="keypressAction">
+			<paper-input id="longUrl" label="Paster your long URL here" value="{{longUrl}}"></paper-input>
+			<paper-button on-tap="shorten" raised>Shorten URL</paper-button>
+		</div>
+		<iron-ajax id="shorten" url="${context}api/url/shorten" method="POST" body="{{longUrl}}"
+				   handle-as="text" on-response="onShortened"></iron-ajax>
+		<p>{{shortUrl}}</p>
+	</template>
+	<script>
+	(function() {
+		Polymer({
+			is: "url-shortener",
+			shorten: function() {
+				this.$.shorten.generateRequest();
+			},
+			onShortened: function(e, request) {
+				this.shortUrl = request.xhr.responseText;
+				console.log(request.xhr);
+			},
+			keypressAction: function(ev) {
+				var code = ev.keyCode || ev.charCode;
+				var key = ev.keyIdentifier;
+				if (key === 'Enter' || code === 13) {
+					this.shorten();
+				}
+			},
+		});
+	})();
+	</script>
+</dom-module>

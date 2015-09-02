@@ -1,0 +1,10 @@
+# copy this file as message.properties, and update the values: refreshToken, clientId, and clientSecret
+title=hello
+loading=loading...
+appengine.app.version=${appengine.app.version}
+
+# TODO try an API key, https://developers.google.com/url-shortener/v1/getting_started?hl=en#APIKey
+# How to get the following values? See https://docs.google.com/presentation/d/1D_nGz3iRO593CQKBTHWbnKaADiv1mtESytF4HC3sz04/edit
+clientId=<put your client id here>
+clientSecret=<put your client secret here>
+refreshToken=<put your refresh token here>
