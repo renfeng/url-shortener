@@ -1,5 +1,6 @@
 package com.google.developers.url.http;
 
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.services.urlshortener.Urlshortener;
 import com.google.api.services.urlshortener.model.Url;
 import com.google.developers.api.UrlShortenerManager;
@@ -29,14 +30,16 @@ public class UrlShortenerServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String requestURI = req.getRequestURI();
-		if (requestURI.length() > 1) {
-			String shortUrl = "http://goo.gl" + requestURI;
-			Urlshortener shortener = urlShortenerManager.getClient();
-			Url longUrl = shortener.url().get(shortUrl).execute();
+		/*
+		 * requestURI will never be just a slash (length == 1), see the comments in DefaultServletModule
+		 */
+		String shortUrl = "http://goo.gl" + req.getRequestURI();
+		try {
+			Url longUrl = urlShortenerManager.getClient()
+					.url().get(shortUrl).execute();
 			resp.sendRedirect(longUrl.getLongUrl());
-		} else {
-			resp.sendRedirect("http://developers.dushu.hu");
+		} catch (GoogleJsonResponseException ex) {
+			resp.setStatus(ex.getStatusCode());
 		}
 	}
 
