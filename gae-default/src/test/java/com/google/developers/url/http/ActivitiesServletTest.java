@@ -1,4 +1,4 @@
-package com.google.developers.event.http;
+package com.google.developers.url.http;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

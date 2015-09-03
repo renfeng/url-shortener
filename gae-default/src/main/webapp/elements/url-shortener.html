@@ -10,7 +10,7 @@
 		</div>
 		<iron-ajax id="shorten" url="${context}api/url/shorten" method="POST" body="{{longUrl}}"
 				   handle-as="text" on-response="onShortened"></iron-ajax>
-		<p>{{shortUrl}}</p>
+		<p><a href="{{shortUrl}}" target="_blank">{{shortUrl}}</a></p>
 	</template>
 	<script>
 	(function() {

@@ -1,4 +1,4 @@
-package com.google.developers.event.http;
+package com.google.developers.url.http;
 
 import com.google.api.services.urlshortener.Urlshortener;
 import com.google.api.services.urlshortener.model.Url;
@@ -47,6 +47,8 @@ public class UrlShortenerServlet extends HttpServlet {
 
 		Url longUrl = new Url().setLongUrl(IOUtils.toString(req.getInputStream()));
 		Url url = urlShortenerManager.getClient().url().insert(longUrl).execute();
-		resp.getWriter().print(url.getId().replaceFirst("http://goo.gl", "http://dushu.hu"));
+		resp.getWriter().print(url.getId()
+				.replaceFirst("http://goo.gl", "http://dushu.hu")
+				.replaceFirst("https://goo.gl", "http://dushu.hu"));
 	}
 }

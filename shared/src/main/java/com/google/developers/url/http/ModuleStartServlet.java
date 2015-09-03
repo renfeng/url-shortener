@@ -1,4 +1,4 @@
-package com.google.developers.event.http;
+package com.google.developers.url.http;
 
 import com.google.appengine.api.LifecycleManager;
 import com.google.inject.Inject;

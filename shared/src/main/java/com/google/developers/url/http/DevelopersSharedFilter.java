@@ -1,4 +1,4 @@
-package com.google.developers.event.http;
+package com.google.developers.url.http;
 
 import com.google.appengine.api.modules.ModulesService;
 import com.google.appengine.api.modules.ModulesServiceFactory;

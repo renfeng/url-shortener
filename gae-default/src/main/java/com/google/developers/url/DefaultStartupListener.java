@@ -1,7 +1,7 @@
-package com.google.developers.event;
+package com.google.developers.url;
 
-import com.google.developers.event.http.DefaultServletModule;
-import com.google.developers.event.http.DevelopersSharedServletModule;
+import com.google.developers.url.http.DefaultServletModule;
+import com.google.developers.url.http.DevelopersSharedServletModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Stage;

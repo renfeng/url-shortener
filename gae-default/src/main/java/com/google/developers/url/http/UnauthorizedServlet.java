@@ -1,4 +1,4 @@
-package com.google.developers.event.http;
+package com.google.developers.url.http;
 
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonGenerator;
