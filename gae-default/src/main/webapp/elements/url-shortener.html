@@ -10,7 +10,8 @@
 		</div>
 		<iron-ajax id="shorten" url="${context}api/url/shorten" method="POST" body="{{longUrl}}"
 				   handle-as="text" on-response="onShortened"></iron-ajax>
-		<p><a href="{{shortUrl}}" target="_blank">{{shortUrl}}</a></p>
+		<p><input id="shortLink" value="{{shortUrl}}" readonly="readonly"
+				  onclick="this.select();this.setSelectionRange(0, this.value.length)"/></p>
 	</template>
 	<script>
 	(function() {
@@ -29,7 +30,7 @@
 				if (key === 'Enter' || code === 13) {
 					this.shorten();
 				}
-			},
+			}
 		});
 	})();
 	</script>
