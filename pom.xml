@@ -185,7 +185,7 @@
 					<artifactId>appengine-maven-plugin</artifactId>
 
 					<!-- <version>${appengine.target.version}</version> -->
-					<version>1.9.25</version>
+					<version>1.9.26</version>
 					<configuration>
 
 						<!-- com.google.appengine.DevAppServerRunner -->
@@ -454,7 +454,7 @@
 		<!-- this is your Project ID. See https://console.developers.google.com -->
 		<appengine.app.id>s~gleaming-cove-706</appengine.app.id>
 
-		<appengine.target.version>1.9.25</appengine.target.version>
+		<appengine.target.version>1.9.26</appengine.target.version>
 
 		<!-- <encoding>UTF-8</encoding> -->
 		<maven.compiler.source>1.7</maven.compiler.source>

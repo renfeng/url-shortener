@@ -134,8 +134,4 @@
 
 	</dependencies>
 
-	<properties>
-		<context>/</context>
-	</properties>
-
 </project>

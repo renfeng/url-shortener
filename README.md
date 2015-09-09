@@ -26,6 +26,7 @@ bower install --save Polymer/polymer#^1.0.0
 bower install --save PolymerElements/paper-input
 bower install --save PolymerElements/paper-button
 bower install --save PolymerElements/iron-ajax
+bower install --save PolymerElements/iron-image
 ```
 
 Compile, and run locally (GAE devserver)
